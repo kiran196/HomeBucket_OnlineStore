@@ -2,7 +2,9 @@
 HomeBucker. An online store for all household, kitchenware, bedding requirements.
 
 nodejs_backend.js <- Nodejs Handler
+
 public_html <- All Static html/css files
+
 shopDetails_mongoDump <- mongodb dump
 
 ### How to run
