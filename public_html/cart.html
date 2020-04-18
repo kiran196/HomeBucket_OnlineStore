@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Shopping Cart | HomeBasket </title>
+	<link rel="stylesheet" href="./css/styles.css">
+	<script src="./js/script.js" type="text/javascript"></script>
+	<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+	<div class="sections">
+		<div id="title_div">
+			<h1> HomeBasket </h1>
+			<hr>
+		</div>
+		
+		<div id="menu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="products.html">Products</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a class="active" href="cart.html">Shopping Cart</a></li>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="signup.html">Signup</a></li>
+				<li><a href="contactus.html">Contact Us</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="sections" style="padding-top: 20px;">
+		<div id="body_content" style="height: 4000px !important;">
+			<h1 style="padding-top: 20px; margin-bottom: 10px;"> Your Shopping Cart </h1>
+			<h3 id="amount_title" style="color: blue; display: none;"> Your total is: $<span id="totalAmount"></span></h3>
+			<button class="button checkout_btn" style="display: none;"> Checkout </button>
+			<button class="button clear_btn" style="display: none;"> Clear Cart </button>
+			<br/><br/>
+			<div class="data_row2">
+				<center>
+					<h3> Your shopping cart is empty. </h3>
+				</center>
+			</div>
+		</div>
+		<br/><br/>
+	</div>
+	
+	<div class="sections" style="padding-top: 20px;">
+		<div style="background-color: #333; width: 100%; height: 50px;">
+			<p style="display: inline; float: left; padding: 15px; color: white;"> © Copyright 2020. HomeBasket. </p>
+			<div style="display: inline-block; float: right; padding: 15px; color: white;">
+				<a href="index.html" style="color: white;"> Home </a> |
+				<a href="products.html" style="color: white;"> Products </a> |
+				<a href="contactus.html" style="color: white;"> Contact Us </a>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var totalprice = 0;
+	var totalitems = 0;
+	$.get('http://localhost:8081/all_products_in_cart', function(prods) {
+		var counter = 0;
+		var row = 0;
+		var output = "";
+		totalprice = 0;
+		totalitems = 0;
+		$.each(prods, function(elem_name, elem_text) {
+			if(counter == 0)
+				output += "<div id='first_box'>";
+			else if(counter == 1)
+				output += "<div id='second_box'>";
+			else
+				output += "<div id='third_box'>";
+
+			output += "<img src='./uploads/" + elem_text.product_img + "' width='250px' height='auto' style='padding-top: 10px;' />";
+			output += "<h4>" + elem_text.product_name + "</h4>";
+			output += "<p>" + elem_text.product_desc + "</p>";
+			output += "<br/>";
+			output += "<span><p style='color: blue;'> Price - $" + elem_text.product_price + "</p><p style='color: blue;'> Quantity - " + elem_text.product_quant + "</span><br/>";
+			
+			totalprice += parseFloat(elem_text.product_price) * parseFloat(elem_text.product_quant);
+			totalitems += 1;
+					
+			if(counter == 2) {
+				output += "</div><div style='clear:both;'></div>";
+				counter = 0;
+				row += 1;
+			} else {
+				output += "</div>";
+				counter += 1;
+			}
+		});
+		$(".data_row2").empty();
+		$(".data_row2").append(output);
+		
+		if(output != "") {
+			$("#amount_title").css('display', 'block');
+			$("#totalAmount").text(totalprice.toFixed(2));
+			$(".checkout_btn").css('display', 'inline-block');
+			$(".clear_btn").css('display', 'inline-block');
+		}
+	});
+	
+	$(".clear_btn").click(function() {
+		var answer = confirm("This will clear the whole shopping cart. Are you sure?");
+		if(answer == true) {
+			$.get('http://localhost:8081/clear_cart', function(result) { });
+			alert("Your cart has been cleared");
+			window.location.href = './cart.html';
+		}
+	});
+
+	$(".checkout_btn").click(function() {
+		window.location.href = './checkout.html?totalprice=' + totalprice + '&totalitems=' + totalitems + '';
+	});
+</script>
+</html>

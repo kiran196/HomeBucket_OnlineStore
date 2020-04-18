@@ -1,0 +1,289 @@
+body {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #4267B3;
+	font-family: "Poppins", sans-serif;
+}
+
+.sections {
+	width: 75%;
+	min-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: white;
+}
+
+#title_div {
+	margin: auto;
+	display: inline-block;
+}
+
+.sections #title_div h1 {
+	color: #4267B3 !important;
+	font-size: 48px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 48px;
+	margin: 0 auto;
+	color: #333;
+}
+
+.sub_header {
+	font-size: 40px;
+	margin: 0 auto;
+	color: #333;
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+
+h4 {
+	color: #4267B3;
+	font-size: 24px;
+}
+hr {
+	width:200px;
+	border:5px solid #4267B3;
+}
+
+#menu {
+	border: 1px solid white;
+	margin: 0 auto;
+	font-size: 16px;
+}
+
+#menu ul {
+	display: block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+#menu li {
+	float: left;
+}
+
+#menu li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+#menu li a:hover:not(.active) {
+	background-color: #111;
+}
+
+.active {
+	background-color: #4267B3;
+}
+
+p {
+	font-size: 16px;
+	margin: 0;
+	margin-bottom: 20px;
+}
+
+.data_row {
+	width: 920px;
+	min-width: 920px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.data_row #first_box, .data_row #second_box, .data_row #third_box{
+	display: inline-block;
+	width: 300px;
+	min-width: 300px;
+	height: 230px;
+	min-height: 230px;
+	border:	1px solid #333;
+}
+
+.data_row2 {
+	width: 920px;
+	min-width: 920px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.data_row2 #first_box, .data_row2 #second_box, .data_row2 #third_box{
+	display: inline-block;
+	width: 300px;
+	min-width: 300px;
+	height: 600px;
+	min-height: 600px;
+	border:	1px solid #333;
+}
+
+
+.data_row #first_box {
+	float: left;
+}
+
+.data_row #first_box:hover {
+	box-shadow:
+        1px 1px 1px 1px #333,
+        2px 2px 2px 2px #333;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+
+.data_row #second_box {
+	display: inline-block;
+    margin:0 auto;
+}
+
+.data_row #second_box:hover {
+	box-shadow:
+        1px 1px 1px 1px #333,
+        2px 2px 2px 2px #333;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+
+.data_row #third_box {
+	float: right;
+}
+
+.data_row #third_box:hover {
+	box-shadow:
+        1px 1px 1px 1px #333,
+        2px 2px 2px 2px #333;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+
+.data_row2 #first_box {
+	float: left;
+}
+
+.data_row2 #first_box:hover {
+	box-shadow:
+        1px 1px 1px 1px #333,
+        2px 2px 2px 2px #333;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+
+.data_row2 #second_box {
+	display: inline-block;
+    margin:0 auto;
+}
+
+.data_row2 #second_box:hover {
+	box-shadow:
+        1px 1px 1px 1px #333,
+        2px 2px 2px 2px #333;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+
+.data_row2 #third_box {
+	float: right;
+}
+
+.data_row2 #third_box:hover {
+	box-shadow:
+        1px 1px 1px 1px #333,
+        2px 2px 2px 2px #333;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+
+.clickbox {
+	cursor: pointer;
+}
+
+.button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+	box-shadow: 
+		1px 1px #333,
+		2px 2px #333,
+		3px 3px #333,
+		4px 4px #333,
+		5px 5px #333;
+    -webkit-transform: translateX(-1px);
+    transform: translateX(-1px);
+}
+
+#signupform {
+	width: 60%;
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+#signupform input[type="text"], input[type="email"], input[type="password"],
+input[type="number"] {
+	height: 25px;
+	width: 250px;
+}
+
+#loginform {
+	width: 60%;
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+#loginform input[type="text"], input[type="email"], input[type="password"],
+input[type="number"] {
+	height: 25px;
+	width: 250px;
+}
+
+#currencyform, #contactform {
+	width: 60%;
+	margin: 0 auto;
+	font-size: 20px;
+}
+
+#currencyform2 {
+	width: 45%;
+	min-width: 578px;
+	float: left;
+	font-size: 20px;
+}
+
+#currencyform3 {
+	width: 45%;
+	float: right;
+	font-size: 20px;
+}
+
+#currencyform input[type="text"], input[type="email"], input[type="password"],
+input[type="number"] {
+	height: 25px;
+	width: 250px;
+}
+
+#currencyform2 input[type="text"], input[type="email"], input[type="password"],
+input[type="number"] {
+	height: 25px;
+	width: 250px;
+}
+
+#currencyform3 input[type="text"], input[type="email"], input[type="password"],
+input[type="number"] {
+	height: 25px;
+	width: 250px;
+}
+
+#contactform input[type="text"], input[type="email"], input[type="password"],
+input[type="number"] {
+	height: 25px;
+	width: 250px;
+}
